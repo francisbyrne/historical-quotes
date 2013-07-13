@@ -62,9 +62,9 @@ var getMarketDataCSV = function( response, params ) {
       csv()
         .from( body, { columns: true } )
         .to.array( function( data ) {
-        	var cleanData = cleanMarketData( data );
+        //	var data = cleanMarketData( data );
           response.writeHead( 200, { 'Content-Type': 'application/json' } );
-          response.end( callback + '({data:' + JSON.stringify( cleanData ) + '})' );
+          response.end( callback + '({data:' + JSON.stringify( data ) + '})' );
       } );
     }
   } );
