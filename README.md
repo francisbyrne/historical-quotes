@@ -8,9 +8,11 @@ Uses the [yahoo-managed HistCSVDownload](https://code.google.com/p/yahoo-finance
 
 1. Deploy the source code to a host which supports Node.
 2. Run ```node index.js```
-3. Call the URL. e.g. http://some-host/?symbol=GOOG
+3. Call the URL. e.g. ```http://some-host/?symbol=GOOG```
 4. Get jsonp response, which is historical quotes sorted by date in descending order
+
 ```javascript
+
 callback(
   {data:
     [
@@ -20,12 +22,13 @@ callback(
     ]
   }
 );
+
 ```
 
 ## Options
 You can specify options via GET parameters in the url. 
 The following is a list of parameters:
-* symbol - *MANDATORY* Specify the stock to lookup by ticker; any ticker that works on Yahoo Finance should work here. e.g. http://some-host/?symbol=GOOG
-* endDate - Specify the end date, inclusive, for historical quotes, in yyyy-mm-dd format. e.g. http://localhost:8888/?symbol=GOOG&endDate=2013-07-11. Default: today's date.
-* startDate - Specify the start date for historical quotes, in yyyy-mm-dd format. e.g. http://some-host/?symbol=GOOG&startDate=2013-05-19. Defaults: endDate minus one year.
-* interval - Specify the interval of quotes, in days ('d'), weeks ('w') or years ('y'). e.g. e.g. http://some-host/?symbol=GOOG&interval=w Default: 'd' (Days).
+* **symbol**: *mandatory* Specify the stock to lookup by ticker; any ticker that works on Yahoo Finance should work here. e.g. ```http://some-host/?symbol=GOOG```
+* **endDate**: Specify the end date, inclusive, for historical quotes, in yyyy-mm-dd format. e.g. ```http://some-host/?symbol=GOOG&endDate=2013-07-11```. Default: today's date.
+* **startDate**: Specify the start date for historical quotes, in yyyy-mm-dd format. e.g. ```http://some-host/?symbol=GOOG&startDate=2013-05-19```. Default: endDate minus one year.
+* **interval**: Specify the interval of quotes, in days ('d'), weeks ('w') or years ('y'). e.g. e.g. ```http://some-host/?symbol=GOOG&interval=w```. Default: 'd' (Days).
