@@ -50,19 +50,21 @@ var cleanMarketData = function( quotes ) {
 };
 
 // gets market data csv given a set of params and displays it as json
-var getMarketDataCSV = function( response, marketDataParams ) {
+var getMarketDataCSV = function( response, params ) {
 	// build the url to get the csv from
-	var csvUrl = buildIChartUrl( marketDataParams );
+	var csvUrl = buildIChartUrl( params );
 	console.log( 'About to request .csv from: ' + csvUrl );
   request.get( csvUrl, function ( error, csvResponse, body ) {
     if ( ! error && csvResponse.statusCode == 200 ) {
+
+      var callback = params.callback ? params.callback : 'callback';
       // convert csv response into json object
       csv()
         .from( body, { columns: true } )
         .to.array( function( data ) {
         	var cleanData = cleanMarketData( data );
           response.writeHead( 200, { 'Content-Type': 'application/json' } );
-          response.end( JSON.stringify( cleanData ) );
+          response.end( callback + '({data:' + JSON.stringify( cleanData ) + '})' );
       } );
     }
   } );
@@ -76,6 +78,6 @@ exports.getMarketDataJson = function( query, response ) {
 	  getMarketDataCSV( response, params );
   } else {
   	response.writeHead( 200, { 'Content-Type': 'application/json' } );
-    response.end( '{error: "Please specify market data symbol e.g. GOOG."}' );
+    response.end( '{error: "Please specify market data symbol, e.g. GOOG."}' );
   }
 };
