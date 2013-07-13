@@ -2,6 +2,7 @@ yahoo.finance.historical
 ========================
 
 Node.js webservice that gets JSON-formatted historical quotes from Yahoo Finance.
+
 Uses the [yahoo-managed HistCSVDownload](https://code.google.com/p/yahoo-finance-managed/wiki/sampleYahooManagedAPIHistQuotesDownload) webservice, then converts the data to json.
 
 ## Getting Started
@@ -15,7 +16,9 @@ Uses the [yahoo-managed HistCSVDownload](https://code.google.com/p/yahoo-finance
 
 ### Request
 
-```http://some-host/?symbol=GOOG&startDate=2013-07-03&endDate=2013-07-11&interval=d```
+``` 
+http://some-host/?symbol=GOOG&startDate=2013-07-09&endDate=2013-07-11&interval=d
+```
 
 ###Response
 
@@ -46,30 +49,6 @@ callback({
         "Close": "905.24",
         "Volume": "1964200",
         "Adj Close": "905.24"
-    }, {
-        "Date": "2013-07-08",
-        "Open": "899.21",
-        "High": "906.27",
-        "Low": "897.08",
-        "Close": "905.09",
-        "Volume": "1969500",
-        "Adj Close": "905.09"
-    }, {
-        "Date": "2013-07-05",
-        "Open": "890.01",
-        "High": "895.41",
-        "Low": "887.34",
-        "Close": "893.49",
-        "Volume": "1701900",
-        "Adj Close": "893.49"
-    }, {
-        "Date": "2013-07-03",
-        "Open": "879.90",
-        "High": "889.17",
-        "Low": "878.50",
-        "Close": "886.43",
-        "Volume": "1047000",
-        "Adj Close": "886.43"
     }]
 })
 
@@ -77,15 +56,16 @@ callback({
 
 ## Options
 You can specify options via GET parameters in the url. 
+
 The following is a list of parameters:
 * **symbol**: *(Mandatory)* Specify the stock to lookup by ticker; any ticker that works on Yahoo Finance should work here. 
-e.g. ```http://some-host/?symbol=GOOG```
+  * e.g. ```http://some-host/?symbol=GOOG```
 * **endDate**: Specify the end date, inclusive, for historical quotes, in yyyy-mm-dd format. 
-e.g. ```http://some-host/?symbol=GOOG&endDate=2013-07-11```. 
-Default: today's date.
+  * e.g. ```http://some-host/?symbol=GOOG&endDate=2013-07-11```. 
+  * Default: today's date.
 * **startDate**: Specify the start date for historical quotes, in yyyy-mm-dd format. 
-e.g. ```http://some-host/?symbol=GOOG&startDate=2013-05-19```. 
-Default: endDate minus one year.
+  * e.g. ```http://some-host/?symbol=GOOG&startDate=2013-05-19```. 
+  * Default: endDate minus one year.
 * **interval**: Specify the interval of quotes, in days ('d'), weeks ('w') or years ('y'). 
-e.g. ```http://some-host/?symbol=GOOG&interval=w```. 
-Default: 'd' (Days).
+  * e.g. ```http://some-host/?symbol=GOOG&interval=w```. 
+  * Default: 'd' (Days).
