@@ -11,17 +11,67 @@ Uses the [yahoo-managed HistCSVDownload](https://code.google.com/p/yahoo-finance
 3. Call the URL. e.g. ```http://some-host/?symbol=GOOG```
 4. Get jsonp response, which is historical quotes sorted by date in descending order
 
+## Example 
+
+### Request
+
+```http://some-host/?symbol=GOOG&startDate=2013-07-03&endDate=2013-07-11&interval=d```
+
+###Response
+
 ```javascript
 
-callback(
-  {data:
-    [
-      {"Date":"2013-07-12","Open":"920.00","High":"923.00",
-        "Low":"915.24","Close":"923.00","Volume":"2568200","Adj Close":"923.00"},
-      ...
-    ]
-  }
-);
+callback({
+    data: [{
+        "Date": "2013-07-11",
+        "Open": "913.00",
+        "High": "920.81",
+        "Low": "908.52",
+        "Close": "920.24",
+        "Volume": "2584200",
+        "Adj Close": "920.24"
+    }, {
+        "Date": "2013-07-10",
+        "Open": "903.45",
+        "High": "911.14",
+        "Low": "900.38",
+        "Close": "905.99",
+        "Volume": "1708400",
+        "Adj Close": "905.99"
+    }, {
+        "Date": "2013-07-09",
+        "Open": "911.00",
+        "High": "912.95",
+        "Low": "897.98",
+        "Close": "905.24",
+        "Volume": "1964200",
+        "Adj Close": "905.24"
+    }, {
+        "Date": "2013-07-08",
+        "Open": "899.21",
+        "High": "906.27",
+        "Low": "897.08",
+        "Close": "905.09",
+        "Volume": "1969500",
+        "Adj Close": "905.09"
+    }, {
+        "Date": "2013-07-05",
+        "Open": "890.01",
+        "High": "895.41",
+        "Low": "887.34",
+        "Close": "893.49",
+        "Volume": "1701900",
+        "Adj Close": "893.49"
+    }, {
+        "Date": "2013-07-03",
+        "Open": "879.90",
+        "High": "889.17",
+        "Low": "878.50",
+        "Close": "886.43",
+        "Volume": "1047000",
+        "Adj Close": "886.43"
+    }]
+})
 
 ```
 
