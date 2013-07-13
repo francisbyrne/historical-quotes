@@ -1,0 +1,12 @@
+{
+  "name": "historical-quotes",
+  "version": "0.0.1",
+  "dependencies": {
+    "csv": "0.3.x",
+    "request": "2.21.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.2.x"
+  }
+}
