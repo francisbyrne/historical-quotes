@@ -78,7 +78,14 @@ callback({
 ## Options
 You can specify options via GET parameters in the url. 
 The following is a list of parameters:
-* **symbol**: *mandatory* Specify the stock to lookup by ticker; any ticker that works on Yahoo Finance should work here. e.g. ```http://some-host/?symbol=GOOG```
-* **endDate**: Specify the end date, inclusive, for historical quotes, in yyyy-mm-dd format. e.g. ```http://some-host/?symbol=GOOG&endDate=2013-07-11```. Default: today's date.
-* **startDate**: Specify the start date for historical quotes, in yyyy-mm-dd format. e.g. ```http://some-host/?symbol=GOOG&startDate=2013-05-19```. Default: endDate minus one year.
-* **interval**: Specify the interval of quotes, in days ('d'), weeks ('w') or years ('y'). e.g. e.g. ```http://some-host/?symbol=GOOG&interval=w```. Default: 'd' (Days).
+* **symbol**: *(Mandatory)* Specify the stock to lookup by ticker; any ticker that works on Yahoo Finance should work here. 
+e.g. ```http://some-host/?symbol=GOOG```
+* **endDate**: Specify the end date, inclusive, for historical quotes, in yyyy-mm-dd format. 
+e.g. ```http://some-host/?symbol=GOOG&endDate=2013-07-11```. 
+Default: today's date.
+* **startDate**: Specify the start date for historical quotes, in yyyy-mm-dd format. 
+e.g. ```http://some-host/?symbol=GOOG&startDate=2013-05-19```. 
+Default: endDate minus one year.
+* **interval**: Specify the interval of quotes, in days ('d'), weeks ('w') or years ('y'). 
+e.g. ```http://some-host/?symbol=GOOG&interval=w```. 
+Default: 'd' (Days).
