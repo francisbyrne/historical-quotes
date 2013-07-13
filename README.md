@@ -1,4 +1,4 @@
-yahoo.finance.historical
+historical-quotes
 ========================
 
 Node.js webservice that gets JSON-formatted historical quotes from Yahoo Finance.
