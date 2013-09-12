@@ -17,7 +17,7 @@ Uses the [yahoo-managed HistCSVDownload](https://code.google.com/p/yahoo-finance
 ### Request
 
 ``` 
-http://some-host/?symbol=GOOG&startDate=2013-07-09&endDate=2013-07-11&interval=d
+http://some-host:8888/?symbol=GOOG&startDate=2013-07-09&endDate=2013-07-11&interval=d
 ```
 
 ###Response
